@@ -30,13 +30,12 @@
         document.querySelectorAll("[data-filter]").forEach(function (button) {
           var on = button === filter;
           button.setAttribute("aria-pressed", on ? "true" : "false");
-          button.className = button.className
-            .replace("bg-ink text-white", "")
-            .replace("bg-white text-ink ring-1 ring-black/10", "");
-          button.classList.toggle("bg-ink", on);
-          button.classList.toggle("text-white", on);
-          button.classList.toggle("bg-white", !on);
-          button.classList.toggle("text-ink", !on);
+          button.classList.toggle("bg-brand", on);
+          button.classList.toggle("text-ink", on);
+          button.classList.toggle("bg-transparent", !on);
+          button.classList.toggle("text-[#e6e6e6]", !on);
+          button.classList.toggle("ring-1", !on);
+          button.classList.toggle("ring-white/20", !on);
         });
         document.querySelectorAll("[data-work-card]").forEach(function (card) {
           var show = name === "all" || card.getAttribute("data-category") === name;
